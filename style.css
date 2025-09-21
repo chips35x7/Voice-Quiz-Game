@@ -9,6 +9,7 @@
 :root {
     --FF: 'Nunito Sans', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     --FS: clamp(0.8rem, 2.5vw, 1.6rem);
+    --SCORE-FS: clamp(1rem, 2.7vw, 2rem);
     --BG-COLOR: #f4f4f4;
     --BTN-BG: green;
     --BTN-HVR: rgb(0, 255, 0);
@@ -29,11 +30,21 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+    position: relative;
 }
 
 .welcome {
     margin-bottom: 100px;
     text-shadow: var(--SHADOW-EFFECT);
+}
+
+.score {
+    position: absolute;
+    right: 25px;
+    top: 25px;
+    font-weight: 600;
+    text-shadow: var(--SHADOW-EFFECT);
+    font-size: var(--SCORE-FS);
 }
 
 .container {

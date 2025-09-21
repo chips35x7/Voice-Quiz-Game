@@ -1,11 +1,11 @@
 const questions = [
   { q: "What color are bananas when they are ripe?", a: "yellow" },
   { q: "What is 5 minus 2?", a: "three" },
-  { q: "What is the opposite of hot?", a: "cold" },
+  { q: "What year did Zimbabwe gain it's independence?", a: "1978" },
   { q: "Which animal is known as the king of the jungle?", a: "lion" },
   { q: "How many days are in a week?", a: "seven" },
   { q: "What planet do we live on?", a: "earth" },
-  { q: "What is ten multiplied by two?", a: "twenty" },
+  { q: "What is ten multiplied by two?", a: "20" },
   { q: "Who wrote the play Romeo and Juliet?", a: "shakespeare" },
   { q: "What gas do humans need to breathe to stay alive?", a: "oxygen" },
   { q: "If you mix red and blue paint, what color do you get?", a: "purple" },
@@ -15,6 +15,7 @@ let current = 0;
 const questionBox = document.getElementById("questionBox");
 const spokenText = document.getElementById("spokenText");
 const feedback = document.getElementById("feedback");
+const scoreCount = document.getElementById("score-count");
 
 // Text-to-Speech
 function speak(text) {
@@ -43,6 +44,7 @@ function startListening() {
   const recognition = new (window.SpeechRecognition ||
     window.webkitSpeechRecognition)();
   recognition.lang = "en-US";
+  recognition.continuous = true;
   recognition.interimResults = false;
   recognition.maxAlternatives = 1;
 
@@ -66,6 +68,10 @@ function checkAnswer(answer) {
     feedback.innerText = "✅ Correct!";
     speak("Correct!");
     current++;
+    let score = parseInt(scoreCount.innerText);
+    score += 10;
+    scoreCount.innerText = score;
+
     if (current < questions.length) {
       setTimeout(askQuestion, 1500); // small pause before next Q
     } else {
