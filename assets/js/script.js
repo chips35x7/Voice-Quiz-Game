@@ -12,10 +12,14 @@ const questions = [
 ];
 
 let current = 0;
+let gameStarted = false;
+
 const questionBox = document.getElementById("questionBox");
 const spokenText = document.getElementById("spokenText");
 const feedback = document.getElementById("feedback");
 const scoreCount = document.getElementById("score-count");
+const startBtn = document.getElementById("start-game");
+const restartBtn = document.getElementById("restart-game");
 
 // Text-to-Speech
 function speak(text) {
@@ -28,6 +32,7 @@ function speak(text) {
 function startGame() {
   feedback.innerText = "";
   current = 0;
+  gameStarted = true;
   askQuestion();
 }
 
@@ -36,6 +41,7 @@ function askQuestion() {
   const question = questions[current].q;
   questionBox.innerText = question;
   speak(question);
+  displayStartBtn();
   startListening();
 }
 
@@ -64,6 +70,7 @@ function startListening() {
 // Check Answer
 function checkAnswer(answer) {
   const correct = questions[current].a.toLowerCase();
+
   if (answer.includes(correct)) {
     feedback.innerText = "✅ Correct!";
     speak("Correct!");
@@ -77,6 +84,7 @@ function checkAnswer(answer) {
     } else {
       speak("Well done! You've finished the game.");
       questionBox.innerText = "🎉 Game Complete!";
+      // gameStarted = false;
     }
   } else {
     feedback.innerText = "❌ Try again.";
@@ -84,3 +92,20 @@ function checkAnswer(answer) {
     setTimeout(askQuestion, 1500); // retry same question
   }
 }
+
+function displayStartBtn() {
+  if (gameStarted) {
+    startBtn.style.display = "none";
+    restartBtn.style.display = "block";
+  } else {
+    startBtn.style.display = "block";
+    restartBtn.style.display = "none";
+  }
+}
+
+displayStartBtn();
+
+startBtn.addEventListener("click", startGame);
+restartBtn.addEventListener("click", () => {
+  location.reload();
+});

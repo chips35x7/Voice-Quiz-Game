@@ -11,9 +11,12 @@
     --FS: clamp(0.8rem, 2.5vw, 1.6rem);
     --SCORE-FS: clamp(1rem, 2.7vw, 2rem);
     --BG-COLOR: #f4f4f4;
-    --BTN-BG: green;
-    --BTN-HVR: rgb(0, 255, 0);
+    --START-BTN-BG: green;
+    --START-BTN-HVR: rgb(0, 255, 0);
+    --START-OVER-BTN-BG: blue;
+    --START-OVER-BTN-HVR: rgb(41, 105, 255);
     --SHADOW-EFFECT: 0px 2px 3px #d6fd68;
+    --SHADOW-EFFECT: 0px 2px 3px orangered;
 }
 
 
@@ -26,7 +29,7 @@ body {
     place-content: center;
     font-size: var(--FS);
     min-height: 100vh;
-    background-image: url("./bg-illustration.png");
+    background-image: url("../images/bg-illustration.png");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -64,11 +67,28 @@ button {
     padding: 10px 20px;
     margin-top: 15px;
     cursor: pointer;
-    background-color: var(--BTN-BG);
     border: none;
     color: white;
 }
 
-button:is(:hover, :focus) {
-    background-color: var(--BTN-HVR);
+.start-btn {
+    background-color: var(--START-BTN-BG);
+}
+
+.start-btn:is(:hover, :focus) {
+    background-color: var(--START-BTN-HVR);
+}
+
+.start-over {
+    background-color: var(--START-OVER-BTN-BG);
+    position: absolute;
+    bottom: 10px;
+    right: 50%;
+    transform: translateX(50%);
+    width: 90%;
+
+}
+
+.start-over:is(:hover, :focus) {
+    background-color: var(--START-OVER-BTN-HVR);
 }

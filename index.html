@@ -5,12 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Voice Quiz Game</title>
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/fontawesome.css">
 
 </head>
 
 <body>
+
     <h1 class="welcome">Welcome To Voice Quiz Game</h1>
+
     <p class="score">Score: <span id="score-count">0</span></p>
 
     <div class="container">
@@ -21,11 +24,13 @@
 
         <p id="feedback"></p>
 
-        <button onclick="startGame()">Start Game</button>
+        <button id="start-game" class="start-btn">Start Game <i class="fas fa-play"></i></button>
 
     </div>
 
-    <script src="script.js"></script>
+    <button id="restart-game" class="start-over">Restart Game <i class="fas fa-redo"></i></button>
+
+    <script src="./assets/js/script.js"></script>
 </body>
 
 </html>
