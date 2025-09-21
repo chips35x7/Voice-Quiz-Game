@@ -25,7 +25,7 @@ body {
     place-content: center;
     font-size: var(--FS);
     min-height: 100vh;
-    background-image: url("/accessibility_game/bg-illustration.png");
+    background-image: url("./bg-illustration.png");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
