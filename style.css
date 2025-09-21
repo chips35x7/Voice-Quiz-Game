@@ -1,0 +1,63 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --FF: 'Nunito Sans', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    --FS: clamp(0.8rem, 2.5vw, 1.6rem);
+    --BG-COLOR: #f4f4f4;
+    --BTN-BG: green;
+    --BTN-HVR: rgb(0, 255, 0);
+    --SHADOW-EFFECT: 0px 2px 3px #d6fd68;
+}
+
+
+body {
+    font-family: var(--FF);
+    text-align: center;
+    padding: 20px;
+    background-color: var(--BG-COLOR);
+    display: grid;
+    place-content: center;
+    font-size: var(--FS);
+    min-height: 100vh;
+    background-image: url("/accessibility_game/bg-illustration.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.welcome {
+    margin-bottom: 100px;
+    text-shadow: var(--SHADOW-EFFECT);
+}
+
+.container {
+    max-width: 400px;
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin: auto;
+    box-shadow: var(--SHADOW-EFFECT);
+}
+
+button {
+    font-size: inherit;
+    padding: 10px 20px;
+    margin-top: 15px;
+    cursor: pointer;
+    background-color: var(--BTN-BG);
+    border: none;
+    color: white;
+}
+
+button:is(:hover, :focus) {
+    background-color: var(--BTN-HVR);
+}
