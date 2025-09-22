@@ -82,13 +82,18 @@ button {
 .start-over {
     background-color: var(--START-OVER-BTN-BG);
     position: absolute;
-    bottom: 10px;
+    bottom: 15px;
     right: 50%;
     transform: translateX(50%);
     width: 90%;
-
 }
 
 .start-over:is(:hover, :focus) {
     background-color: var(--START-OVER-BTN-HVR);
+}
+
+@media screen  and (max-width: 576px) {
+    .start-over {
+        bottom: 60px;
+    }
 }
