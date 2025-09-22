@@ -1,7 +1,7 @@
 const questions = [
   { q: "What color are bananas when they are ripe?", a: "yellow" },
   { q: "What is 5 minus 2?", a: "three" },
-  { q: "What year did Zimbabwe gain it's independence?", a: "1978" },
+  { q: "What year did Zimbabwe gain it's independence?", a: "1980" },
   { q: "Which animal is known as the king of the jungle?", a: "lion" },
   { q: "How many days are in a week?", a: "seven" },
   { q: "What planet do we live on?", a: "earth" },
